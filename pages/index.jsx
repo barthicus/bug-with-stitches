@@ -1,24 +1,11 @@
 import Head from 'next/head';
 import { styled } from '../stitches.config';
-import StitchesLogo from '../components/StitchesLogo';
-import { NewText } from '../components/NewText';
+import { Text } from '../components/Text';
 
 const Box = styled('div', {});
 
-const Text = styled('p', {
-  fontFamily: '$system',
-  color: 'blue',
-});
-
-const StyledText = styled(NewText, {
-  fontFamily: '$system',
-  // color: 'green',
-});
-
-const Link = styled('a', {
-  fontFamily: '$system',
-  textDecoration: 'none',
-  color: '$purple600',
+const StyledText = styled(Text, {
+  fontSize: 20,
 });
 
 const Container = styled('div', {
@@ -47,12 +34,8 @@ export default function Home() {
         <title>Use Stitches with Next.js</title>
       </Head>
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
-        <StitchesLogo />
-        <Text as="h1">Hello, from Stitches.</Text>
-        <StyledText>
-          For full documentation, visit{' '}
-          <Link href="https://stitches.dev">stitches.dev</Link>.
-        </StyledText>
+        <Text>This is Text component.</Text>
+        <StyledText>Hello, from Stitches.</StyledText>
       </Container>
     </Box>
   );
