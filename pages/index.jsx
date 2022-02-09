@@ -1,19 +1,25 @@
-import Head from 'next/head'
-import { styled } from '../stitches.config'
-import StitchesLogo from '../components/StitchesLogo'
+import Head from 'next/head';
+import { styled } from '../stitches.config';
+import StitchesLogo from '../components/StitchesLogo';
+import { NewText } from '../components/NewText';
 
-const Box = styled('div', {})
+const Box = styled('div', {});
 
 const Text = styled('p', {
   fontFamily: '$system',
-  color: '$hiContrast',
-})
+  color: 'blue',
+});
+
+const StyledText = styled(NewText, {
+  fontFamily: '$system',
+  // color: 'green',
+});
 
 const Link = styled('a', {
   fontFamily: '$system',
   textDecoration: 'none',
   color: '$purple600',
-})
+});
 
 const Container = styled('div', {
   marginX: 'auto',
@@ -32,7 +38,7 @@ const Container = styled('div', {
       },
     },
   },
-})
+});
 
 export default function Home() {
   return (
@@ -43,11 +49,11 @@ export default function Home() {
       <Container size={{ '@initial': '1', '@bp1': '2' }}>
         <StitchesLogo />
         <Text as="h1">Hello, from Stitches.</Text>
-        <Text>
+        <StyledText>
           For full documentation, visit{' '}
           <Link href="https://stitches.dev">stitches.dev</Link>.
-        </Text>
+        </StyledText>
       </Container>
     </Box>
-  )
+  );
 }
